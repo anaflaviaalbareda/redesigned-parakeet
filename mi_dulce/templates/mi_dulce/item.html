@@ -1,0 +1,98 @@
+{% extends "mi_dulce/base.html" %}
+
+{% block head %}
+<meta name="description" content="">
+  
+<title>Dulce Idea</title>
+
+{% endblock %}
+
+{% block content %}
+
+<section class="services2 cid-s5yCarIaFh" id="services2-13">
+    <!--Container-->
+    <div class="container">
+        <div class="col-md-12">
+            <div class="media-container-row">
+                <div class="mbr-figure" style="width: 60%;">
+                    <img src="{{producto.foto.url}}" alt="Dulce-idea">
+                </div>
+                <div class="align-left aside-content">
+                    <h2 class="mbr-title pt-2 mbr-fonts-style display-2 text-secondary" style="font-size: 60px">
+                        {{producto.nombre}}
+                    </h2>
+                    <div class="mbr-section-text">
+                        <p class="mbr-text text1 pt-2 mbr-light mbr-fonts-style display-5">
+                            {{producto.descripcion}}
+                        </p>
+                        <p class="mbr-text text2 pt-4 mbr-light mbr-fonts-style display-2" style="font-size: 30px">
+                            $ {{producto.precio}} {{producto.unidad}}</p>
+                    </div>
+                    <!--Btn-->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section info1 cid-s5yDoiTrCG" id="info1-14" style="padding-bottom: 10px; padding-top: 20px">
+
+
+    <div class="container">
+        <div class="row justify-content-center content-row">
+            <div class="media-container-column title col-12 col-lg-7 col-md-6">
+                <h3 class="mbr-section-subtitle align-left mbr-light pb-3 mbr-fonts-style display-5">No te quedes sin tus delicias</h3>
+                <h2 class="align-left mbr-bold mbr-fonts-style display-2">Realiza tu pedido hoy!</h2>
+            </div>
+            <div class="media-container-column col-12 col-lg-3 col-md-4">
+                <div class="mbr-section-btn align-right py-4"><a class="btn btn-secondary display-4" href="#"><span class="socicon socicon-whatsapp mbr-iconfont mbr-iconfont-btn"></span>Contactar</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section content4 cid-s5yEcjGv9a" id="content4-16">
+    
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2"><strong>Más Productos</strong></h2>
+                <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">Disfruta de toda nuestra variedad de dulces y postres</h3>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="extShop featuresLink cid-s5yDNZgS4f" id="extShop3-15">
+
+    <div class="container-fluid px-5">
+
+        <div class="row justify-content-center">
+        	<!-- begin for -->
+        	{% for c in relacionados %}
+            <div class="card p-3 col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <img src="{{c.foto.url}}" alt="dulce-idea" title="">
+                    </div>
+                    <div class="card-box align-center">
+                        <p class="mbr-text mbr-fonts-style display-4">{{c.short}}</p>
+
+                        <div class="card-link">
+                            <h4 class="card-title-link mbr-fonts-style display-5"><a href="../item?n={{c.nombre| slugify}}&id={{c.idproducto}}" class="text-secondary">{{c.nombre}}</a></h4>
+
+                            <h5 class="card-price mbr-fonts-style display-5">
+                            	<a href="../item?n={{c.nombre| slugify}}&id={{c.idproducto}}" class="text-secondary">${{c.precio}}</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- end for -->
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

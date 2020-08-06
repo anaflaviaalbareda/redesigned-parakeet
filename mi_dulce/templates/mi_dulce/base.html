@@ -1,0 +1,144 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  
+  {% block head %}
+  {% endblock %}
+
+  <link rel="stylesheet" href="../static/assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="../static/assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css">
+  <link rel="stylesheet" href="../static/assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="../static/assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="../static/assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="../static/assets/tether/tether.min.css">
+  <link rel="stylesheet" href="../static/assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="../static/assets/formstyler/jquery.formstyler.css">
+  <link rel="stylesheet" href="../static/assets/formstyler/jquery.formstyler.theme.css">
+  <link rel="stylesheet" href="../static/assets/theme/css/style.css">
+  <link rel="stylesheet" href="../static/assets/gallery/style.css">
+  <link rel="preload" as="style" href="../static/assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="../static/assets/mobirise/css/mbr-additional.css" type="text/css">
+  
+</head>
+<body>
+<section class="extMenu11 menu cid-s5ky3vJ7sh" once="menu" id="extMenu12-2">
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="navbar-brand">
+            <span class="navbar-logo">
+                <a href="#">
+                    <img src="../static/assets/images/sticker-redondo-rrss-1.png" alt="Dulceideas" title="" style="height: 3.8rem;">
+                </a>
+            </span>
+            <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-1" href="#" style="font-size: 45px;">Dulceideas</a></span>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item">
+                    <a class="nav-link link text-black display-4" href="../">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link link text-black dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu">Productos</a>
+                    <div class="dropdown-menu">
+                      <a class="text-black dropdown-item display-4" href="../productos">Todos<br></a>
+                      {% for c in categorias %}
+                      <a class="text-black dropdown-item display-4" href="../productos?n={{c.nombre| slugify}}&id={{c.idcategoria}}">{{c.nombre}}<br></a>
+                      {% endfor %}
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link text-black display-4" href="../sobre_nosotros">Sobre Nosotros</a>
+                </li></ul>
+            
+            <div class="navbar-buttons mbr-section-btn">
+              <a class="btn btn-sm btn-secondary display-4" href="https://api.whatsapp.com/send?phone=56994392461&text=Hola%20Me%20gustaría%20hacer%20un%20pedido">
+                <span class="socicon socicon-whatsapp mbr-iconfont mbr-iconfont-btn"></span>+ 56 9 9439 2461
+              </a> 
+              <a class="btn btn-sm btn-info display-4" href="../#extForm17-i">
+                <span class="mbrib-letter mbr-iconfont mbr-iconfont-btn"></span>Contactanos
+              </a>
+            </div>
+      </div>
+    </nav>
+</section>
+
+{% block content %}
+{% endblock %}
+
+<section once="footers" class="cid-s5oISPUzZD" id="footer7-t">
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="row row-links">
+              <ul class="foot-menu">
+                <li class="foot-menu-item mbr-fonts-style display-7">
+                  <a class="text-white dropdown-item display-4" href="../"><strong>Home</strong></a>
+                </li>
+                <li class="foot-menu-item mbr-fonts-style display-7">
+                  <a class="text-white dropdown-item display-4" href="../sobre_nosotros"><strong><strong>Sobre Nosotros</strong></strong></a>
+                </li>
+                <li class="foot-menu-item mbr-fonts-style display-7">
+                  <a class="text-white dropdown-item display-4" href="../productos"><strong>Productos</strong></a>
+                </li>
+              </ul>
+            </div>
+            <div class="row social-row">
+                <div class="social-list align-right pb-2">
+                <div class="soc-item">
+                        <a href="https://api.whatsapp.com/send?phone=56994392461&text=Hola%20Me%20gustaría%20hacer%20un%20pedido" target="_blank">
+                            <span class="mbr-iconfont mbr-iconfont-social socicon-whatsapp socicon"></span>
+                        </a>
+                    </div><div class="soc-item">
+                        <a href="https://www.facebook.com/Dulce-Ideas-103622221082656/" target="_blank">
+                            <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                        </a>
+                    </div><div class="soc-item">
+                        <a href="https://www.instagram.com/dulceideasoficial/" target="_blank">
+                            <span class="mbr-iconfont mbr-iconfont-social socicon-instagram socicon"></span>
+                        </a>
+                    </div></div>
+            </div>
+            <div class="row row-copirayt">
+                <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
+                    © Desarrollado por <a href=https://www.sbpymes.com>SBPymes.com</a> - Propiedad de Dulce Idea - Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <script src="../static/assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="../static/assets/popper/popper.min.js"></script>
+  <script src="../static/assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../static/assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="../static/assets/dropdown/js/nav-dropdown.js"></script>
+  <script src="../static/assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="../static/assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="../static/assets/parallax/jarallax.min.js"></script>
+  <script src="../static/assets/tether/tether.min.js"></script>
+  <script src="../static/assets/masonry/masonry.pkgd.min.js"></script>
+  <script src="../static/assets/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="../static/assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
+  <script src="../static/assets/vimeoplayer/jquery.mb.vimeo_player.js"></script>
+  <script src="../static/assets/formstyler/jquery.formstyler.js"></script>
+  <script src="../static/assets/formstyler/jquery.formstyler.min.js"></script>
+  <script src="../static/assets/theme/js/script.js"></script>
+  <script src="../static/assets/slidervideo/script.js"></script>
+  <script src="../static/assets/gallery/player.min.js"></script>
+  <script src="../static/assets/gallery/script.js"></script>
+  <!--<script src="../static/assets/formoid/formoid.min.js"></script>-->
+  
+  
+
+</body>
+</html>

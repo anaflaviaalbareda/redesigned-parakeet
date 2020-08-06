@@ -1,0 +1,205 @@
+{% extends "mi_dulce/base.html" %}
+
+{% block head %}
+
+<link rel="shortcut icon" href="../static/assets/images/sticker-redondo-rrss-1.png" type="image/x-icon">
+<meta name="description" content="">
+  
+<title>Dulceideas</title>
+
+{% endblock %}
+
+{% block content %}
+
+<section class="header1 cid-s5kxBxmqZx mbr-parallax-background" id="header1-1" >
+    <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(86, 63, 39);">
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="mbr-white col-md-10">
+                <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">Dulceideas para ti</h1>
+                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-2">Deliciosos postres y pasteles</h3>
+                <p class="mbr-text align-center pb-3 mbr-fonts-style display-5">Para toda ocasion conoce nuestros productos Dulce idea y alegra tu día,</p>
+                <div class="mbr-section-btn align-center"><a class="btn btn-md btn-secondary display-4" href="../productos"><span class="mbri-shopping-bag mbr-iconfont mbr-iconfont-btn"></span>NUESTROS PRODUCTOS</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="extFeatures cid-s5kANjwSIU" id="extFeatures12-8">
+
+    <div class="container-fluid">
+        
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 row-item card1 col-lg-4">
+                <div class="card-img pb-3 align-center mbr-white">
+                    <span class="mbr-iconfont mbri-hearth"></span>
+                </div>
+                <h4 class="mbr-fonts-style mbr-card-title align-center mbr-white pb-3 display-5">Postres Hechos con Amor</h4>
+                <p class="mbr-text mbr-fonts-style align-center mbr-white display-7">Lorem ipsum dolor amet, consecte tempor incididunt ut labore et dolore tumber tur adipisicing elit.</p>
+                
+            </div>
+
+            <div class="col-md-6 row-item card2 col-lg-4">
+                <div class="card-img pb-3 align-left mbr-white">
+                    <span class="mbr-iconfont mbri-star"></span>
+                </div>
+                <h4 class="mbr-fonts-style mbr-card-title align-center mbr-white pb-3 display-5">Para toda ocasión</h4>
+                <p class="mbr-text mbr-fonts-style align-center mbr-white display-7">Lorem ipsum dolor amet, consecte tempor incididunt ut labore et dolore tumber tur adipisicing elit.</p>
+                
+            </div>
+
+            <div class="col-md-6 row-item card3 col-lg-4">
+                <div class="card-img pb-3 align-left mbr-white">
+                    <span class="mbr-iconfont mbri-home"></span>
+                </div>
+                <h4 class="mbr-fonts-style mbr-card-title align-center mbr-white pb-3 display-5">Delivery a tu hogar</h4>
+                <p class="mbr-text mbr-fonts-style align-center mbr-white display-7">Lorem ipsum dolor amet, consecte tempor incididunt ut labore et dolore tumber tur adipisicing elit.</p>
+                
+            </div>
+
+            
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section content4 cid-s5kCKTqgEP" id="content4-h">
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-1">Productos Destacados</h2>
+                <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">Conoce nuestro productos destacados</h3>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-gallery mbr-slider-carousel cid-s5kCxX6csH" id="gallery1-g">
+    <div>
+        <div><!-- Filter --><!-- Gallery -->
+            <div class="mbr-gallery-row">
+                <div class="mbr-gallery-layout-default">
+                    <div>
+                    <div>
+                    <!-- Item galeria-->
+                    {% for c in destacados %}
+                    <div class="mbr-gallery-item mbr-gallery-item--p0" data-video-url="false" data-tags="Increíble">
+                        <div href="#lb-gallery1-g" data-slide-to="{{forloop.counter0}}" data-toggle="modal">
+                            <img src="{{c.foto.url}}" alt="" title="" style="object-fit: cover; object-position: center; height: 300px;"><span class="icon-focus"></span>
+                            <span class="mbr-gallery-title mbr-fonts-style display-7">{{c.nombre}}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- End for -->
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div><!-- Lightbox -->
+        <div data-app-prevent-settings="" class="mbr-slider modal fade carousel slide" tabindex="-1" data-keyboard="true" data-interval="false" id="lb-gallery1-g">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="carousel-inner">
+                            <!-- Lightbox for each item -->
+                            {% for c in destacados %}
+                            {% if forloop.first %}  
+                            <div class="carousel-item active">
+                                <img src="{{c.foto.url}}" alt="" title="">
+                            </div>
+                            {% else %}
+                            <div class="carousel-item">
+                                <img src="{{c.foto.url}}" alt="" title="">
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                            <!-- end for -->
+                        </div>
+                        <a class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#lb-gallery1-g">
+                            <span class="mbri-left mbr-iconfont" aria-hidden="true"></span><span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control carousel-control-next" role="button" data-slide="next" href="#lb-gallery1-g">
+                            <span class="mbri-right mbr-iconfont" aria-hidden="true"></span><span class="sr-only">Next</span>
+                        </a>
+                        <a class="close" href="#" role="button" data-dismiss="modal">
+                            <span class="sr-only">Close</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</section>
+
+<section class="mbr-section info1 cid-s5kE4xlRkU" id="info1-j">
+
+    <div class="container">
+        <div class="row justify-content-center content-row">
+            <div class="media-container-column title col-12 col-lg-7 col-md-6">
+                
+                <h2 class="align-left mbr-bold mbr-fonts-style display-2">Productos para toda ocasion</h2>
+            </div>
+            <div class="media-container-column col-12 col-lg-3 col-md-4">
+                <div class="mbr-section-btn align-right py-4"><a class="btn btn-secondary display-4" href="../productos">VER TODOS LOS PRODUCTOS</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="extForm cid-s5kD6pQrUw" id="extForm17-i">
+    
+    <div class="mbr-overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 mx-auto mbr-form form-col" data-form-type="formoid">
+                <div class="form-wrap" data-form-type="formoid">
+                    <div class="align-left">
+                        <h4 class="mbr-section-title mbr-semibold pb-1 mbr-fonts-style display-7">Haz tus reservas y pedidos</h4>
+                        <h2 class="mbr-section-title mbr-bold pb-1 mbr-fonts-style display-1">Contactanos</h2>
+
+                        <div class="line-wrap">
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                    <form action="../contacto/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <h4 class="mbr-section-title mbr-semibold pb-1 mbr-fonts-style display-7">{{alerta}}</h4>
+                        </div>
+                        <div class="dragArea form-row">
+                            <div class="col-lg-6 form-group" style="" data-for="phone">
+                                <input type="text" name="name" placeholder="Nombre" class="form-control display-7" required="required">
+                            </div>
+                            <div class="col-lg-6 form-group" data-for="email">
+                                <input type="email" name="email" placeholder="Email" class="form-control display-7" required="required">
+                            </div>
+                            <div class="col-lg-6 form-group" data-for="name">
+                                <input type="tel" name="phone" placeholder="Telefono" class="form-control display-7" >
+                            </div>
+                            <div class="col-lg-6 form-group" data-for="title">
+                                <input type="text" name="Title" placeholder="Asunto" class="form-control display-7" required="required">
+                            </div>
+                            <div class="col-lg-12 form-group" data-for="message" style="">
+                                <textarea name="message" placeholder="Mensaje" class="form-control display-7" required="required"></textarea>
+                            </div>
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-sm btn-secondary btn-form display-7">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6 m-auto">
+                <div class="text-wrap m-auto">
+                    <h3 class="mbr-section-title mbr-bold pb-1 mbr-fonts-style display-2">Postres Dulce Ideas a la puerta de tu casa.</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
